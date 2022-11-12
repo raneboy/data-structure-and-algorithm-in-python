@@ -136,6 +136,15 @@ class LinkedList:
             i_node = next_node
         self.head = prev_node
 
+    # Create the linked list from array
+    def create_linkedlist_from_array(self, list):
+        if self.head != None: return
+        self.head = Node(list[0])
+        prev = self.head
+        for i in range(0, len(list)-2):
+            prev.next = Node(list[i+1])
+            prev = prev.next
+        
 
     # Return length of linked list
     def length(self):
@@ -163,33 +172,39 @@ node6 = Node(6)
 node7 = Node(7)
 node8 = Node(8)
 
-list = LinkedList()
-list.put(node1)
-list.put(node2)
-list.put(node3)
-list.put(node4)
+#list = LinkedList()
+#list.put(node1)
+#list.put(node2)
+#list.put(node3)
+#list.put(node4)
 
 # Put item into list
-list.print_all()
-list.put_at(node5, 2)
-list.put_front(node6)
-list.put_at(node7, 2)
-list.print_all()
+#list.print_all()
+#list.put_at(node5, 2)
+#list.put_front(node6)
+#list.put_at(node7, 2)
+#list.print_all()
 
 # Remove item from the list
-print(list.get())
-print(list.get_front())
-print(list.get_at(2))
-list.print_all()
+#print(list.get())
+#print(list.get_front())
+#print(list.get_at(2))
+#list.print_all()
 
 # Get the count of the list
-print(list.length())
+#print(list.length())
 
 # Swap two element
-list.swap(0, 2)
-list.print_all()
+#list.swap(0, 2)
+#list.print_all()
 
 # Reverse the list
-list.print_all()
-list.reverse()
+#list.print_all()
+#list.reverse()
+#list.print_all()
+
+# Create linked list from list
+num_list = [1, 3, 5, 7, 9]
+list = LinkedList()
+list.create_linkedlist_from_array(num_list) 
 list.print_all()
